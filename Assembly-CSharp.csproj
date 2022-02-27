@@ -83,6 +83,7 @@
     <Compile Include="Assets/AllIn1SpriteShader/Demo/Scripts/DemoCamera.cs" />
     <Compile Include="Assets/AllIn1SpriteShader/Scripts/SetGlobalTime.cs" />
     <Compile Include="Assets/AnimationController.cs" />
+    <Compile Include="Assets/ButtonTwoTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
