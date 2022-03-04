@@ -1,14 +1,21 @@
 ﻿<Properties StartupConfiguration="{50AF767A-B6BA-50C0-5900-F57E65F71B60}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/ButtonTest.cs">
+  <MonoDevelop.Ide.ItemProperties.AllIn1SpriteShaderAssembly PreferredExecutionTarget="590adb23-a0c4-4935-a723-985a4c3272f6" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/MyJoystickExample.cs">
     <Files>
-      <File FileName="Assets/MyJoystickExample.cs" Line="83" Column="6" />
-      <File FileName="Assets/ButtonTest.cs" Line="34" Column="18" />
-      <File FileName="Assets/ButtonTwoTest.cs" />
+      <File FileName="Assets/MyJoystickExample.cs" Line="53" Column="30" />
+      <File FileName="Assets/Buttons/ButtonTestThree.cs" />
     </Files>
+    <Pads>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="Unity" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="a06d1572-cdc5-474a-8cf2-60f3bb7ffd11" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="590adb23-a0c4-4935-a723-985a4c3272f6" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

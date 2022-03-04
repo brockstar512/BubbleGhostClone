@@ -53,14 +53,9 @@
     <UnityVersion>2020.3.19f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets/AllIn1SpriteShader/Editor/AllIn1ShaderGradientDrawer.cs" />
     <Compile Include="Assets/Joystick Pack/Scripts/Editor/VariableJoystickEditor.cs" />
     <Compile Include="Assets/Joystick Pack/Scripts/Editor/FloatingJoystickEditor.cs" />
-    <Compile Include="Assets/AllIn1SpriteShader/Editor/AllIn1SpriteShaderStencil.cs" />
     <Compile Include="Assets/Joystick Pack/Scripts/Editor/JoystickEditor.cs" />
-    <Compile Include="Assets/AllIn1SpriteShader/Editor/AllIn1ShaderScriptEditor.cs" />
-    <Compile Include="Assets/AllIn1SpriteShader/Editor/AllIn1UrpShader.cs" />
-    <Compile Include="Assets/AllIn1SpriteShader/Editor/AllIn1SpriteShader.cs" />
     <Compile Include="Assets/Joystick Pack/Scripts/Editor/DynamicJoystickEditor.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -306,9 +301,6 @@
     </Reference>
     <Reference Include="log4netPlastic">
       <HintPath>Library/PackageCache/com.unity.collab-proxy@1.9.0/Lib/Editor/PlasticSCM/log4netPlastic.dll</HintPath>
-    </Reference>
-    <Reference Include="clipper_library">
-      <HintPath>Library/PackageCache/com.unity.cinemachine@2.7.3/Runtime/ThirdParty/clipper_library.dll</HintPath>
     </Reference>
     <Reference Include="unityplastic">
       <HintPath>Library/PackageCache/com.unity.collab-proxy@1.9.0/Lib/Editor/PlasticSCM/unityplastic.dll</HintPath>
