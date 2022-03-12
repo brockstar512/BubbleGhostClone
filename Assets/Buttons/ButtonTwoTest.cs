@@ -21,13 +21,21 @@ public class ButtonTwoTest : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     float trackStart;
     public float trackingTime = 3f;
 
+    const float holdDownTime = 2f;
+    float holdDownTimeClick = 0;
+    bool isHoldingDown = false;
+
 
 
     private void Update()
     {
+        if(Time.time - holdDownTimeClick >= holdDownTime && isDown)
+        {
+            isHoldingDown = true;
+            Debug.Log("Holding down");
+        }
 
-
-        if (isTracking)
+        if (isTracking || isDown)
         {
             LookAtTarget();
             //one second after you look at target or if you are holding down a 
@@ -45,6 +53,7 @@ public class ButtonTwoTest : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     {
         isTracking = true;
         trackStart = Time.time;
+        holdDownTimeClick = Time.time;
 
 
         float timeSinceLastClick = Time.time - lastClick;
@@ -66,6 +75,7 @@ public class ButtonTwoTest : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     public void OnPointerUp(PointerEventData eventData)
     {
         isDown = false;
+        isHoldingDown = false;
 
     }
     void HoldInPlace(bool holdInPlace)
