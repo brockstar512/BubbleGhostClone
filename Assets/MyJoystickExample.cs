@@ -22,6 +22,8 @@ public class MyJoystickExample : MonoBehaviour
     bool isHoldingPosition;
 
 
+    [SerializeField] SpriteRenderer Sr;
+
     //testing purposes
     public GameObject bubble;
 
@@ -29,7 +31,13 @@ public class MyJoystickExample : MonoBehaviour
     {
         //get the input
         direction = Vector2.up * variableJoystick.Vertical + Vector2.right * variableJoystick.Horizontal;
+        //OrientPlayer();
+        if (direction != new Vector2(0, 0))
+        {
+            //OrientSprite();
+        }
     }
+
 
 
     public void FixedUpdate()
@@ -65,18 +73,53 @@ public class MyJoystickExample : MonoBehaviour
             //sprite rotation https://www.youtube.com/watch?v=gs7y2b0xthU
             //i think this means make my forwrad this direction
             Quaternion toRotation = Quaternion.LookRotation(Vector3.forward, direction);//gets how much it needs to rotate
+            
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);//rotates that object from x to end by this speed
         }
     }
+
+    //public void OrientSprite()
+    //{
+    //    //Debug.Log($"Direction {direction}");
+    //    if (direction.x > 0f)
+    //    {
+    //        //Debug.Log($"Direction {direction}");
+
+    //        Sr.flipX = true;
+    //    }
+    //    else if (direction.x < 0f)
+    //    {
+    //        //Debug.Log($"Direction {direction}");
+
+    //        Sr.flipX = false;
+    //    }
+    //}
+    //public void OrientSprite(bool flip)
+    //{
+    //    Sr.flipX = flip;
+    //}
 
     public void B_Button()
     {
         //Debug.Log("B for blow");
     }
+
     public void A_Button(Vector2 target)
     {
-        //Debug.Log("A for action");
-        transform.up = target; 
+  
+        transform.up = target;
+
+
+        //Here is the distance -> (4.4, 0.0, 0.0) ghost is to the right
+        //Here is the distance -> (-2.8, 0.0, 0.0) ghost is on the left
+        //sould move this to the butotn scipte
+        //Vector3 dir = new Vector3(this.gameObject.transform.position.x - bubble.transform.position.x, this.gameObject.transform.position.y - bubble.transform.position.y, 0).normalized;
+
+        //bool flip = dir.x < 0 ? true : false;
+        //Debug.Log($"A for action {flip} and dir looking {dir} and moving dir {direction.normalized}");
+        //OrientSprite(flip);
+
+        //--orient sprite----------------
     }
     public void A_Button(bool tapped)
     {

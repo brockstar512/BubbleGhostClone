@@ -157,7 +157,7 @@ public class ButtonTest : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             //var force = 1f;//took out displaced power from angle
             float finalForce = blowForce * normalizedDistance;//final power
 
-            Debug.Log($"Final Force:{finalForce} blow for {blowForce} distance {normalizedDistance}");
+            //Debug.Log($"Final Force:{finalForce} blow for {blowForce} distance {normalizedDistance}");
 
             //bubble.transform.GetComponent<Rigidbody2D>().AddForceAtPosition(finalForce * dir, hit.point);
 

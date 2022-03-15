@@ -41,7 +41,7 @@ public class ButtonTwoTest : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
             //one second after you look at target or if you are holding down a 
             if (Time.time - trackStart >= trackingTime)//|| isTracking
             {
-                Debug.Log($"Stop Tracking");
+                //Debug.Log($"Stop Tracking");
                 isTracking = false;
             }
         }
