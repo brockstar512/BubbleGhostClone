@@ -17,7 +17,7 @@ public class ButtonTwoTest : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     private const float DOUBLIE_CLICK_TIME = .2f;
     bool currentState = false;
 
-    bool isTracking = false;
+    public bool isTracking = false;
     float trackStart;
     public float trackingTime = 3f;
 
@@ -29,24 +29,40 @@ public class ButtonTwoTest : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
 
     private void Update()
     {
-        if(Time.time - holdDownTimeClick >= holdDownTime && isDown)
+        //Debug.Log($"Is tracking? {isTracking}");
+
+        if (Time.time - holdDownTimeClick >= holdDownTime && isDown)
         {
             isHoldingDown = true;
-            Debug.Log("Holding down");
+            //Debug.Log("Holding down");
         }
 
         if (isTracking || isDown)
         {
-            LookAtTarget();
-            //one second after you look at target or if you are holding down a 
+            //    LookAtTarget();
+            //    //one second after you look at target or if you are holding down a 
             if (Time.time - trackStart >= trackingTime)//|| isTracking
-            {
-                //Debug.Log($"Stop Tracking");
-                isTracking = false;
-            }
+        {
+            //Debug.Log($"Stop Tracking");
+            isTracking = false;
+        }
         }
 
 
+    }
+
+    void FixedUpdate()
+    {
+        if (isTracking || isDown)
+        {
+            LookAtTarget();
+            ////one second after you look at target or if you are holding down a 
+            //if (Time.time - trackStart >= trackingTime)//|| isTracking
+            //{
+            //    //Debug.Log($"Stop Tracking");
+            //    isTracking = false;
+            //}
+        }
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -96,9 +112,11 @@ public class ButtonTwoTest : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
 
     void LookAtTarget()
     {
+
         Vector2 target = new Vector2(bubble.transform.position.x - player.transform.position.x, bubble.transform.position.y - player.transform.position.y);
         //Debug.Log($"Trying to look at{target} by subtracting {bubble.transform.position} with {player.transform.position}");
         player.GetComponent<MyJoystickExample>().A_Button(target);//make delegates insted
+
 
     }
 }

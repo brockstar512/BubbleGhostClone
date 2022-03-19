@@ -1,11 +1,9 @@
 ﻿<Properties StartupConfiguration="{50AF767A-B6BA-50C0-5900-F57E65F71B60}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/RoundCameraPos.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Buttons/ButtonTwoTest.cs">
     <Files>
       <File FileName="Assets/MyJoystickExample.cs" Line="117" Column="1" />
-      <File FileName="Assets/BubbleController.cs" />
       <File FileName="Assets/Buttons/ButtonTest.cs" />
-      <File FileName="Assets/Buttons/ButtonTwoTest.cs" />
-      <File FileName="Assets/RoundCameraPos.cs" Line="27" Column="2" />
+      <File FileName="Assets/Buttons/ButtonTwoTest.cs" Line="34" Column="26" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.UnitTesting.TestPad">

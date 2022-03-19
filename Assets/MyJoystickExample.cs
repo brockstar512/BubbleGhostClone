@@ -11,7 +11,7 @@ public class MyJoystickExample : MonoBehaviour
     public VariableJoystick variableJoystick;
     public Rigidbody2D rb;
     Vector2 direction;
-    public Vector2 GetDirection{ get { return direction; }}
+    public Vector2 GetDirection { get { return direction; } }
 
 
     public Button _BButton;
@@ -21,7 +21,8 @@ public class MyJoystickExample : MonoBehaviour
 
     bool isHoldingPosition;
 
-
+    //orientation
+    [SerializeField] ButtonTwoTest buttonTwoTest;
     [SerializeField] SpriteRenderer Sr;
 
     //testing purposes
@@ -34,7 +35,7 @@ public class MyJoystickExample : MonoBehaviour
         //OrientPlayer();
         if (direction != new Vector2(0, 0))
         {
-            //OrientSprite();
+            OrientSprite();
         }
     }
 
@@ -44,10 +45,18 @@ public class MyJoystickExample : MonoBehaviour
     {
         //move the character
         moveCharacter(direction);
+        //Vector2 target = new Vector2(bubble.transform.position.x - this.transform.position.x, bubble.transform.position.y - this.transform.position.y);
+        //transform.up = target;
+        //return;
+        if (!buttonTwoTest.isTracking)
+        {
+            Debug.Log($"Is tracking? rotating char");
 
-        //rotate the character in that direction
-        rotateCharacter(direction);
+            //rotate the character in that direction
+            rotateCharacter(direction);
+        }
 
+        
         //Debug.Log($"direction: {this.transform.up} and our version of dir: {direction}");
         //direction: (1.0, 0.0, 0.0) and our version of dir: (0.0, 0.0)
         //direction is what direction our joystick is... if we're not moving/not pressing it, it's 0,0,0
@@ -58,7 +67,7 @@ public class MyJoystickExample : MonoBehaviour
 
     void moveCharacter(Vector2 direction)
     {
-        if (isHoldingPosition)
+        if (isHoldingPosition)//is this necessary?
             return;
 
         //return; if you want it to stay in place ignore the following
@@ -78,22 +87,22 @@ public class MyJoystickExample : MonoBehaviour
         }
     }
 
-    //public void OrientSprite()
-    //{
-    //    //Debug.Log($"Direction {direction}");
-    //    if (direction.x > 0f)
-    //    {
-    //        //Debug.Log($"Direction {direction}");
+    public void OrientSprite()
+    {
+        //Debug.Log($"Direction {direction}");
+        if (direction.x > 0f)
+        {
+            //Debug.Log($"Direction {direction}");
 
-    //        Sr.flipX = true;
-    //    }
-    //    else if (direction.x < 0f)
-    //    {
-    //        //Debug.Log($"Direction {direction}");
+            Sr.flipX = true;
+        }
+        else if (direction.x < 0f)
+        {
+            //Debug.Log($"Direction {direction}");
 
-    //        Sr.flipX = false;
-    //    }
-    //}
+            Sr.flipX = false;
+        }
+    }
     //public void OrientSprite(bool flip)
     //{
     //    Sr.flipX = flip;
@@ -107,7 +116,7 @@ public class MyJoystickExample : MonoBehaviour
     public void A_Button(Vector2 target)
     {
   
-        transform.up = target;
+        transform.up = target;//this might be better in fixed update?
 
 
         //Here is the distance -> (4.4, 0.0, 0.0) ghost is to the right
