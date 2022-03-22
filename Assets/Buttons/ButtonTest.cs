@@ -90,19 +90,20 @@ public class ButtonTest : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         //If something was hit.
         if (hit.collider != null)
         {
+            if (hit.collider.tag != "bubble")
+                return;
 
-
-            float radius = bubble.GetComponent<CircleCollider2D>().radius;
+                float radius = bubble.GetComponent<CircleCollider2D>().radius;
 
             //the direction the bubble should travel...i think the direction is off on the inverse normal one
-            Debug.DrawLine(hit.point, bubble.transform.position, Color.black);
+            Debug.DrawLine(hit.point, bubble.transform.position, Color.magenta);
             Vector3 dir = new Vector3(bubble.transform.position.x - hit.point.x, bubble.transform.position.y - hit.point.y, 0);
 
 
 
             //kite
             //center of ghost to center of bubble
-            Debug.DrawLine(ghost.transform.position, bubble.transform.position, Color.black);
+            Debug.DrawLine(ghost.transform.position, bubble.transform.position, Color.yellow);
             //perpendicular line
             Vector3 mainVectorCopy = new Vector3(ghost.transform.position.x - bubble.transform.position.x, ghost.transform.position.y - bubble.transform.position.y, 0);
             //top point
@@ -112,12 +113,12 @@ public class ButtonTest : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             var newPoint = (radius / 2) * pointThree + bubble.transform.position;
             var newPoint2 = (-radius / 2) * pointThree + bubble.transform.position;
 
-            Debug.DrawLine(newPoint, newPoint2, Color.black);
+            Debug.DrawLine(newPoint, newPoint2, Color.blue);
 
             //hypotonuse up
-            Debug.DrawLine(newPoint, ghost.transform.position, Color.black);
+            Debug.DrawLine(newPoint, ghost.transform.position, Color.green);
             //hypotonuse down
-            Debug.DrawLine(newPoint2, ghost.transform.position, Color.black);
+            Debug.DrawLine(newPoint2, ghost.transform.position, Color.cyan);
 
 
 
@@ -153,7 +154,7 @@ public class ButtonTest : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
 
 
-
+            Debug.Log($"dir  {dir}");
             //var force = 1f;//took out displaced power from angle
             float finalForce = blowForce * normalizedDistance;//final power
 
@@ -173,6 +174,7 @@ public class ButtonTest : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     //blow power/residual pwer //direction and point
     void ApplyForce(float power, Vector2 direction, Vector2 contactPoint)
     {
+        Debug.Log($"Power {power} and direction {direction}");
         //bubble.transform.GetComponent<Rigidbody2D>().AddForceAtPosition(power * direction, contactPoint);
         bubble.transform.GetComponent<Rigidbody2D>().AddForce(power * direction, ForceMode2D.Impulse);
 

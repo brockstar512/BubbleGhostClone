@@ -346,6 +346,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43be79677c21f4f589e2e1b89b714b27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bubble: {fileID: 0}
+  player: {fileID: 0}
 --- !u!212 &132327428
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3700,7 +3702,7 @@ GameObject:
   - component: {fileID: 2109379642}
   m_Layer: 0
   m_Name: bubble
-  m_TagString: Untagged
+  m_TagString: bubble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

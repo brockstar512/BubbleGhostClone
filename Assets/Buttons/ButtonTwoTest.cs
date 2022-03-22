@@ -77,7 +77,7 @@ public class ButtonTwoTest : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
         float timeSinceLastClick = Time.time - lastClick;
         if (timeSinceLastClick <= DOUBLIE_CLICK_TIME)
         {
-            Debug.Log("Double Click!");
+            //Debug.Log("Double Click!");
             HoldInPlace(currentState);
         }
         else

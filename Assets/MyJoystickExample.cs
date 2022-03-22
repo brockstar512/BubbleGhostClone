@@ -126,14 +126,14 @@ public class MyJoystickExample : MonoBehaviour
 
     public void A_Button(Vector2 target, bool focusState)
     {
-        Debug.Log("FOCUS  "+ focusState);
+        //Debug.Log("FOCUS  "+ focusState);
 
         isFocused = focusState;
     }
 
     void StareAtTarget()
     {
-        Debug.Log("STARING");
+        //Debug.Log("STARING");
 
         Vector2 target = new Vector2(bubble.transform.position.x - this.transform.position.x, bubble.transform.position.y - this.transform.position.y);
         transform.up = target;

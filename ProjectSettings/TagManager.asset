@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - World
   - NoMask
+  - bubble
   layers:
   - Default
   - TransparentFX
