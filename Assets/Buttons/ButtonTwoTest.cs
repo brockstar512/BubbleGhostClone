@@ -41,10 +41,11 @@ public class ButtonTwoTest : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
         {
             //    LookAtTarget();
             //    //one second after you look at target or if you are holding down a 
-            if (Time.time - trackStart >= trackingTime)//|| isTracking
+        if (Time.time - trackStart >= trackingTime)//|| isTracking
         {
             //Debug.Log($"Stop Tracking");
             isTracking = false;
+                LookAtTarget();
         }
         }
 
@@ -68,6 +69,7 @@ public class ButtonTwoTest : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     public void OnPointerDown(PointerEventData eventData)
     {
         isTracking = true;
+
         trackStart = Time.time;
         holdDownTimeClick = Time.time;
 
@@ -112,10 +114,9 @@ public class ButtonTwoTest : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
 
     void LookAtTarget()
     {
-
         Vector2 target = new Vector2(bubble.transform.position.x - player.transform.position.x, bubble.transform.position.y - player.transform.position.y);
         //Debug.Log($"Trying to look at{target} by subtracting {bubble.transform.position} with {player.transform.position}");
-        player.GetComponent<MyJoystickExample>().A_Button(target);//make delegates insted
+        player.GetComponent<MyJoystickExample>().A_Button(target, isTracking);//make delegates insted
 
 
     }

@@ -24,7 +24,7 @@ public class MyJoystickExample : MonoBehaviour
     //orientation
     [SerializeField] ButtonTwoTest buttonTwoTest;
     [SerializeField] SpriteRenderer Sr;
-
+    bool isFocused;
     //testing purposes
     public GameObject bubble;
 
@@ -33,7 +33,7 @@ public class MyJoystickExample : MonoBehaviour
         //get the input
         direction = Vector2.up * variableJoystick.Vertical + Vector2.right * variableJoystick.Horizontal;
         //OrientPlayer();
-        if (direction != new Vector2(0, 0))
+        if (!isFocused)
         {
             OrientSprite();
         }
@@ -45,18 +45,21 @@ public class MyJoystickExample : MonoBehaviour
     {
         //move the character
         moveCharacter(direction);
-        //Vector2 target = new Vector2(bubble.transform.position.x - this.transform.position.x, bubble.transform.position.y - this.transform.position.y);
-        //transform.up = target;
-        //return;
-        if (!buttonTwoTest.isTracking)
-        {
-            Debug.Log($"Is tracking? rotating char");
 
+
+        if (!isFocused)
+        {
             //rotate the character in that direction
             rotateCharacter(direction);
         }
+        else
+        {
+            //stare at target
+            StareAtTarget();
 
-        
+        }
+
+
         //Debug.Log($"direction: {this.transform.up} and our version of dir: {direction}");
         //direction: (1.0, 0.0, 0.0) and our version of dir: (0.0, 0.0)
         //direction is what direction our joystick is... if we're not moving/not pressing it, it's 0,0,0
@@ -86,50 +89,65 @@ public class MyJoystickExample : MonoBehaviour
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);//rotates that object from x to end by this speed
         }
     }
-
+    //while, you're focused
     public void OrientSprite()
     {
+        if (direction == new Vector2(0, 0))
+            return;
+
         //Debug.Log($"Direction {direction}");
         if (direction.x > 0f)
         {
-            //Debug.Log($"Direction {direction}");
+            //if x is poistive flip
+            //Debug.Log($"Direction  x is pliped now {direction}");
 
             Sr.flipX = true;
         }
         else if (direction.x < 0f)
         {
-            //Debug.Log($"Direction {direction}");
+            //if x is negative dont flip
+            //top right
+            //Debug.Log($"Direction  x is NOT flipped now {direction}");
 
             Sr.flipX = false;
         }
     }
-    //public void OrientSprite(bool flip)
-    //{
-    //    Sr.flipX = flip;
-    //}
+
+    //while you're staring
+    public void OrientSprite(bool flip)
+    {
+        Sr.flipX = flip;
+    }
 
     public void B_Button()
     {
         //Debug.Log("B for blow");
     }
 
-    public void A_Button(Vector2 target)
+    public void A_Button(Vector2 target, bool focusState)
     {
-  
-        transform.up = target;//this might be better in fixed update?
+        Debug.Log("FOCUS  "+ focusState);
 
+        isFocused = focusState;
+    }
+
+    void StareAtTarget()
+    {
+        Debug.Log("STARING");
+
+        Vector2 target = new Vector2(bubble.transform.position.x - this.transform.position.x, bubble.transform.position.y - this.transform.position.y);
+        transform.up = target;
 
         //Here is the distance -> (4.4, 0.0, 0.0) ghost is to the right
         //Here is the distance -> (-2.8, 0.0, 0.0) ghost is on the left
+        //maybe move this to 
         //sould move this to the butotn scipte
-        //Vector3 dir = new Vector3(this.gameObject.transform.position.x - bubble.transform.position.x, this.gameObject.transform.position.y - bubble.transform.position.y, 0).normalized;
-
-        //bool flip = dir.x < 0 ? true : false;
+        Vector3 dir = new Vector3(this.gameObject.transform.position.x - bubble.transform.position.x, this.gameObject.transform.position.y - bubble.transform.position.y, 0).normalized;
+        bool flip = dir.x < 0 ? true : false;
         //Debug.Log($"A for action {flip} and dir looking {dir} and moving dir {direction.normalized}");
-        //OrientSprite(flip);
-
-        //--orient sprite----------------
+        OrientSprite(flip);
     }
+    
     public void A_Button(bool tapped)
     {
         ///inPlace
@@ -260,3 +278,7 @@ public class MyJoystickExample : MonoBehaviour
     //    }
     //}
 }
+
+
+//todo when you are tracking depending where you are from the sprite flip
+//todo figure out the orientation of the sprite and fix it
