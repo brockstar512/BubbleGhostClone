@@ -154,7 +154,7 @@ public class ButtonTest : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
 
 
-            Debug.Log($"dir  {dir}");
+            //Debug.Log($"dir  {dir}");
             //var force = 1f;//took out displaced power from angle
             float finalForce = blowForce * normalizedDistance;//final power
 

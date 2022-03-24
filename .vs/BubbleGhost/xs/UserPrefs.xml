@@ -1,9 +1,12 @@
 ﻿<Properties StartupConfiguration="{50AF767A-B6BA-50C0-5900-F57E65F71B60}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Buttons/ButtonTest.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/BubbleController.cs">
     <Files>
-      <File FileName="Assets/MyJoystickExample.cs" Line="137" Column="1" />
-      <File FileName="Assets/SneakEnemy.cs" Line="8" Column="40" />
-      <File FileName="Assets/Buttons/ButtonTest.cs" Line="167" Column="27" />
+      <File FileName="Assets/MyJoystickExample.cs" Line="14" Column="32" />
+      <File FileName="Assets/Buttons/ButtonTwoTest.cs" Line="11" Column="29" />
+      <File FileName="Assets/enemy/SneakEnemy.cs" Line="10" Column="1" />
+      <File FileName="Assets/enemy/FollowEnemy.cs" Line="14" Column="1" />
+      <File FileName="Assets/Buttons/ButtonTest.cs" Line="157" Column="15" />
+      <File FileName="Assets/BubbleController.cs" Line="7" Column="17" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.UnitTesting.TestPad">

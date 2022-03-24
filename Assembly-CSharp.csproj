@@ -58,17 +58,17 @@
     <Compile Include="Assets/Buttons/ButtonTest.cs" />
     <Compile Include="Assets/Joystick Pack/Scripts/Joysticks/FixedJoystick.cs" />
     <Compile Include="Assets/Joystick Pack/Scripts/Joysticks/VariableJoystick.cs" />
+    <Compile Include="Assets/enemy/FollowEnemy.cs" />
+    <Compile Include="Assets/RoundCameraPos.cs" />
     <Compile Include="Assets/Joystick Pack/Examples/JoystickSetterExample.cs" />
     <Compile Include="Assets/BubbleController.cs" />
+    <Compile Include="Assets/enemy/SneakEnemy.cs" />
     <Compile Include="Assets/AnimationController.cs" />
     <Compile Include="Assets/Buttons/ButtonTestThree.cs" />
     <Compile Include="Assets/Joystick Pack/Scripts/Joysticks/FloatingJoystick.cs" />
     <Compile Include="Assets/MyJoystickExample.cs" />
     <Compile Include="Assets/Joystick Pack/Examples/JoystickPlayerExample.cs" />
     <Compile Include="Assets/Buttons/ButtonTwoTest.cs" />
-    <Compile Include="Assets/RoundCameraPos.cs" />
-    <Compile Include="Assets/enemy/SneakEnemy.cs" />
-    <Compile Include="Assets/enemy/FollowEnemy.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

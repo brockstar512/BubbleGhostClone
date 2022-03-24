@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class BubbleController : MonoBehaviour
 {
-    public Vector3 respawnPoint;
+    public Transform respawnPoint;
     // Start is called before the first frame update
     void Start()
     {
-        respawnPoint = this.transform.position;
     }
 
     // Update is called once per frame
@@ -30,7 +29,7 @@ public class BubbleController : MonoBehaviour
                 break;
             default:
                 Debug.Log("Pop");
-                this.transform.position = respawnPoint;
+                this.transform.position = respawnPoint.position;
                 //Destroy(this.gameObject);
                 break;
 

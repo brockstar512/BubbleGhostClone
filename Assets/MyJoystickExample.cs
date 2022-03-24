@@ -14,12 +14,21 @@ public class MyJoystickExample : MonoBehaviour
     public Vector2 GetDirection { get { return direction; } }
 
 
+    public Transform respawnPoint;
+
     public Button _BButton;
     public Button _AButton;
 
     public float rotationSpeed = 270;
 
     bool isHoldingPosition;
+    //todo check if I can blow through items
+    public bool isInSightOfBubble {
+        get
+        {
+            //line of sight
+            return true;
+        } }
 
     //orientation
     [SerializeField] ButtonTwoTest buttonTwoTest;
@@ -154,6 +163,13 @@ public class MyJoystickExample : MonoBehaviour
         isHoldingPosition = !isHoldingPosition;
     }
 
+    [ContextMenu("Respawn")]
+    public void Respawn()
+    {
+        this.transform.position = new Vector2(respawnPoint.position.x + 1, respawnPoint.position.y);
+        Vector2 target = new Vector2(bubble.transform.position.x - this.transform.position.x, bubble.transform.position.y - this.transform.position.y);
+        rotateCharacter(target);
+    }
 
     //void SendRay()
     //{
@@ -279,6 +295,3 @@ public class MyJoystickExample : MonoBehaviour
     //}
 }
 
-
-//todo when you are tracking depending where you are from the sprite flip
-//todo figure out the orientation of the sprite and fix it
