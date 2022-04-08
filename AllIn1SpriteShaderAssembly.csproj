@@ -53,35 +53,32 @@
     <UnityVersion>2020.3.19f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets/AllIn1SpriteShader/Editor/AllIn1ShaderGradientDrawer.cs" />
-    <Compile Include="Assets/AllIn1SpriteShader/Demo/Scripts/Demo2AutoScroll.cs" />
-    <Compile Include="Assets/AllIn1SpriteShader/Demo/Scripts/DemoRepositionExpositor.cs" />
-    <Compile Include="Assets/AllIn1SpriteShader/Scripts/All1CreateUnifiedOutline.cs" />
-    <Compile Include="Assets/AllIn1SpriteShader/Demo/Scripts/DemoRandomColorSwap.cs" />
-    <Compile Include="Assets/AllIn1SpriteShader/Editor/AllIn1SpriteShaderStencil.cs" />
-    <Compile Include="Assets/AllIn1SpriteShader/Demo/Scripts/AllIn1ScrollProperty.cs" />
-    <Compile Include="Assets/AllIn1SpriteShader/Scripts/SetAtlasUvs.cs" />
-    <Compile Include="Assets/AllIn1SpriteShader/Demo/Scripts/All1TextureOffsetOverTime.cs" />
-    <Compile Include="Assets/AllIn1SpriteShader/Demo/Scripts/All1ShaderDemoController.cs" />
-    <Compile Include="Assets/AllIn1SpriteShader/Scripts/AllIn1ShaderWindow.cs" />
-    <Compile Include="Assets/AllIn1SpriteShader/Scripts/AllIn1Shader.cs" />
-    <Compile Include="Assets/AllIn1SpriteShader/Editor/AllIn1ShaderScriptEditor.cs" />
-    <Compile Include="Assets/AllIn1SpriteShader/Editor/AllIn1UrpShader.cs" />
     <Compile Include="Assets/AllIn1SpriteShader/Scripts/RandomSeed.cs" />
     <Compile Include="Assets/AllIn1SpriteShader/Demo/Scripts/DemoItem.cs" />
-    <Compile Include="Assets/AllIn1SpriteShader/Demo/Scripts/DemoCircleExpositor.cs" />
-    <Compile Include="Assets/AllIn1SpriteShader/Demo/Scripts/DemoCamera.cs" />
-    <Compile Include="Assets/AllIn1SpriteShader/Editor/AllIn1SpriteShader.cs" />
-    <Compile Include="Assets/AllIn1SpriteShader/Scripts/SetGlobalTime.cs" />
-    <Compile Include="Assets/AllIn1SpriteShader/URP/Demo/Scripts/All1DemoClaw.cs" />
-    <Compile Include="Assets/AllIn1SpriteShader/URP/Demo/Scripts/All1DemoRandomZ.cs" />
-    <Compile Include="Assets/AllIn1SpriteShader/URP/Demo/Scripts/All1DemoUpAndDown.cs" />
-    <Compile Include="Assets/AllIn1SpriteShader/URP/Demo/Scripts/All1DemoUrpCamMove.cs" />
-    <Compile Include="Assets/AllIn1SpriteShader/URP/Demo/Scripts/All1DemoChangeScene.cs" />
-    <Compile Include="Assets/AllIn1SpriteShader/Scripts/SetGlobalTimeUnity2018.cs" />
-    <Compile Include="Assets/AllIn1SpriteShader/Editor/AllIn1SpriteShaderMaterialInspector.cs" />
-    <Compile Include="Assets/AllIn1SpriteShader/Scripts/SetGlobalTimeNew.cs" />
+    <Compile Include="Assets/AllIn1SpriteShader/Scripts/SetAtlasUvs.cs" />
+    <Compile Include="Assets/AllIn1SpriteShader/Editor/AllIn1ShaderGradientDrawer.cs" />
     <Compile Include="Assets/AllIn1SpriteShader/Editor/AllIn1SpriteShaderUiMaskMaterialInspector.cs" />
+    <Compile Include="Assets/AllIn1SpriteShader/Editor/AllIn1ShaderScriptEditor.cs" />
+    <Compile Include="Assets/AllIn1SpriteShader/Scripts/SetGlobalTimeNew.cs" />
+    <Compile Include="Assets/AllIn1SpriteShader/Demo/Scripts/DemoRepositionExpositor.cs" />
+    <Compile Include="Assets/AllIn1SpriteShader/Scripts/AllIn1ShaderWindow.cs" />
+    <Compile Include="Assets/AllIn1SpriteShader/Demo/Scripts/All1ShaderDemoController.cs" />
+    <Compile Include="Assets/AllIn1SpriteShader/Scripts/All1CreateUnifiedOutline.cs" />
+    <Compile Include="Assets/AllIn1SpriteShader/Demo/Scripts/All1TextureOffsetOverTime.cs" />
+    <Compile Include="Assets/AllIn1SpriteShader/Demo/Scripts/DemoRandomColorSwap.cs" />
+    <Compile Include="Assets/AllIn1SpriteShader/Demo/Scripts/DemoCamera.cs" />
+    <Compile Include="Assets/AllIn1SpriteShader/Demo/Scripts/Demo2AutoScroll.cs" />
+    <Compile Include="Assets/AllIn1SpriteShader/Editor/AllIn1SpriteShaderMaterialInspector.cs" />
+    <Compile Include="Assets/AllIn1SpriteShader/Demo/Scripts/DemoCircleExpositor.cs" />
+    <Compile Include="Assets/AllIn1SpriteShader/Scripts/SetGlobalTimeUnity2018.cs" />
+    <Compile Include="Assets/AllIn1SpriteShader/Scripts/AllIn1Shader.cs" />
+    <Compile Include="Assets/AllIn1SpriteShader/Demo/Scripts/AllIn1ScrollProperty.cs" />
+    <Compile Include="Assets/AllIn1SpriteShader/2DRenderer_URP/Demo/Scripts/All1DemoClaw.cs" />
+    <Compile Include="Assets/AllIn1SpriteShader/2DRenderer_URP/Demo/Scripts/All1DemoRandomZ.cs" />
+    <Compile Include="Assets/AllIn1SpriteShader/2DRenderer_URP/Demo/Scripts/All1DemoUpAndDown.cs" />
+    <Compile Include="Assets/AllIn1SpriteShader/2DRenderer_URP/Editor/AllIn12DRendererMaterialInspector.cs" />
+    <Compile Include="Assets/AllIn1SpriteShader/2DRenderer_URP/Demo/Scripts/All1DemoUrpCamMove.cs" />
+    <Compile Include="Assets/AllIn1SpriteShader/2DRenderer_URP/Demo/Scripts/All1DemoChangeScene.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/AllIn1SpriteShader/!Start_Here.txt" />
@@ -89,8 +86,8 @@
     <None Include="Assets/AllIn1SpriteShader/Resources/AllIn1SpriteShader.shader" />
     <None Include="Assets/AllIn1SpriteShader/Resources/AllIn1SpriteShaderScaledTime.shader" />
     <None Include="Assets/AllIn1SpriteShader/Resources/AllIn1SpriteShaderUiMask.shader" />
-    <None Include="Assets/AllIn1SpriteShader/URP/Resources/AllIn1OneShaderFunctions.cginc" />
-    <None Include="Assets/AllIn1SpriteShader/URP/Resources/AllIn1Urp2dRenderer.shader" />
+    <None Include="Assets/AllIn1SpriteShader/2DRenderer_URP/Resources/AllIn1OneShaderFunctions.cginc" />
+    <None Include="Assets/AllIn1SpriteShader/2DRenderer_URP/Resources/AllIn1Urp2dRenderer.shader" />
     <None Include="Assets/AllIn1SpriteShader/Resources/AllIn1OneShaderFunctions.cginc" />
   </ItemGroup>
   <ItemGroup>
@@ -325,8 +322,14 @@
     <Reference Include="Unity.Plastic.Antlr3.Runtime">
       <HintPath>Library/PackageCache/com.unity.collab-proxy@1.9.0/Lib/Editor/PlasticSCM/Unity.Plastic.Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="DOTweenEditor">
+      <HintPath>Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
+    </Reference>
     <Reference Include="log4netPlastic">
       <HintPath>Library/PackageCache/com.unity.collab-proxy@1.9.0/Lib/Editor/PlasticSCM/log4netPlastic.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
     </Reference>
     <Reference Include="unityplastic">
       <HintPath>Library/PackageCache/com.unity.collab-proxy@1.9.0/Lib/Editor/PlasticSCM/unityplastic.dll</HintPath>
